@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Data.SQLite;
+using System.Diagnostics;
 
 namespace WBNT
 {
@@ -22,7 +24,8 @@ namespace WBNT
 	 //[STAThread]
 	public partial class MainForm : Form
 	{
-		 
+		/************************************ BEGIN *********************/
+		
 		public MainForm()
 		{
 			//
@@ -39,6 +42,13 @@ namespace WBNT
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
+			
+			Database DB =  new Database();
+			if (DB.dbExist == true) {
+				statusDB.Text = "DB loaded";
+			} else {
+				statusDB.Text = "DB NOT loaded";
+			}
 		}
 		
 		public void startSplash()
@@ -51,5 +61,53 @@ namespace WBNT
 		{
 			this.Activate();
 		}
+		
+		
+		void MainFormFormClosing(object sender, FormClosingEventArgs e)
+		{
+			if( MessageBox.Show("Are you sure to close this application ?", "Close",MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+			{
+				e.Cancel = true;
+			}
+		}
+		
+		
+		void SubMenuFileConfigDBClick(object sender, EventArgs e)
+		{
+			bool isOpenForm = false;
+			
+			foreach( Form f in Application.OpenForms)
+			{
+				if (f.Name == "frmDBConfig") 
+				{
+					isOpenForm = true;
+					f.BringToFront();
+					break;
+				}
+			}
+			
+			if (isOpenForm == false)
+			{
+				Form frm1 = new frmDBConfig();
+				frm1.MdiParent = this;
+				frm1.Show();
+			}
+		}
+		
+		
+		void Timer1Tick(object sender, EventArgs e)
+		{
+			DateTime dt = DateTime.Now;
+			String currentTime = dt.Day.ToString() + "/" + dt.Month.ToString() + "/" + dt.Year.ToString() + "  " +  dt.ToLongTimeString();
+			statusTimeDate.Text = currentTime.ToString();
+		}
+		
+		
+		void ExitToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			Application.Exit();
+		}
+		
+		/************************** END ****************************/	
 	}
 }

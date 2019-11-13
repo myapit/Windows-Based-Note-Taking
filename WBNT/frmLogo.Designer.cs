@@ -15,6 +15,7 @@ namespace WBNT
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 		private System.Windows.Forms.ProgressBar progressBar1;
+		private System.Windows.Forms.TextBox textBox1;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -38,6 +39,7 @@ namespace WBNT
 		private void InitializeComponent()
 		{
 			this.progressBar1 = new System.Windows.Forms.ProgressBar();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// progressBar1
@@ -49,18 +51,28 @@ namespace WBNT
 			this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
 			this.progressBar1.TabIndex = 0;
 			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(74, 42);
+			this.textBox1.Multiline = true;
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(462, 138);
+			this.textBox1.TabIndex = 1;
+			// 
 			// frmLogo
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(611, 260);
+			this.ClientSize = new System.Drawing.Size(616, 246);
 			this.ControlBox = false;
+			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.progressBar1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "frmLogo";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Windows Based Note Taking (WBNT)";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 	}

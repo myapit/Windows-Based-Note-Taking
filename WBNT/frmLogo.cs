@@ -24,6 +24,19 @@ namespace WBNT
 			//
 			InitializeComponent();
 			
+string title = @"
+			
+				██╗    ██╗    ██████╗     ███╗   ██╗    ████████╗
+				██║    ██║    ██╔══██╗    ████╗  ██║    ╚══██╔══╝
+				██║ █╗ ██║    ██████╔╝    ██╔██╗ ██║       ██║   
+				██║███╗██║    ██╔══██╗    ██║╚██╗██║       ██║   
+				╚███╔███╔╝    ██████╔╝    ██║ ╚████║       ██║   
+				 ╚══╝╚══╝     ╚═════╝     ╚═╝  ╚═══╝       ╚═╝   
+                                                 
+";
+			//textBox1.Text = title;
+			//label1.Text = title;
+
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
