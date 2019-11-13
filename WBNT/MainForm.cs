@@ -25,7 +25,7 @@ namespace WBNT
 	public partial class MainForm : Form
 	{
 		/************************************ BEGIN *********************/
-		
+		private Database DB;
 		public MainForm()
 		{
 			//
@@ -43,7 +43,7 @@ namespace WBNT
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 			
-			Database DB =  new Database();
+			DB =  new Database();
 			if (DB.dbExist == true) {
 				statusDB.Text = "DB loaded";
 			} else {

@@ -94,6 +94,9 @@
     <EmbeddedResource Include="frmLogo.resx">
       <DependentUpon>frmLogo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNotes.resx">
+      <DependentUpon>frmNotes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
