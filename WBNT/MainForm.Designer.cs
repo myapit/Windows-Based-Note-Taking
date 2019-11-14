@@ -64,10 +64,10 @@ namespace WBNT
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusBar = new System.Windows.Forms.StatusStrip();
+			this.space = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusDB = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusTimeDate = new System.Windows.Forms.ToolStripStatusLabel();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
-			this.space = new System.Windows.Forms.ToolStripStatusLabel();
 			this.menuBar.SuspendLayout();
 			this.statusBar.SuspendLayout();
 			this.SuspendLayout();
@@ -99,6 +99,7 @@ namespace WBNT
 			this.subMenuFileOpenNote.Name = "subMenuFileOpenNote";
 			this.subMenuFileOpenNote.Size = new System.Drawing.Size(161, 22);
 			this.subMenuFileOpenNote.Text = "Open &Note";
+			this.subMenuFileOpenNote.Click += new System.EventHandler(this.SubMenuFileOpenNoteClick);
 			// 
 			// subMenuFileConfigDB
 			// 
@@ -160,6 +161,12 @@ namespace WBNT
 			this.statusBar.TabIndex = 2;
 			this.statusBar.Text = "statusStrip1";
 			// 
+			// space
+			// 
+			this.space.Name = "space";
+			this.space.Size = new System.Drawing.Size(710, 19);
+			this.space.Spring = true;
+			// 
 			// statusDB
 			// 
 			this.statusDB.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
@@ -178,12 +185,6 @@ namespace WBNT
 			// 
 			this.timer1.Enabled = true;
 			this.timer1.Tick += new System.EventHandler(this.Timer1Tick);
-			// 
-			// space
-			// 
-			this.space.Name = "space";
-			this.space.Size = new System.Drawing.Size(679, 19);
-			this.space.Spring = true;
 			// 
 			// MainForm
 			// 

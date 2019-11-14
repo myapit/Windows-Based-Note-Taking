@@ -108,6 +108,29 @@ namespace WBNT
 			Application.Exit();
 		}
 		
+		
+		void SubMenuFileOpenNoteClick(object sender, EventArgs e)
+		{
+			bool isOpenForm = false;
+			
+			foreach( Form f in Application.OpenForms)
+			{
+				if (f.Name == "frmNotes") 
+				{
+					isOpenForm = true;
+					f.BringToFront();
+					break;
+				}
+			}
+			
+			if (isOpenForm == false)
+			{
+				Form frm1 = new frmNotes();
+				frm1.MdiParent = this;
+				frm1.Show();
+			}
+		}
+		
 		/************************** END ****************************/	
 	}
 }

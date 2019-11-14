@@ -19,11 +19,12 @@ namespace WBNT
 	public class Database
 	{
 /************************************ BEGIN *********************/		
-		public static SQLiteConnection sqlCon;
-		public static SQLiteCommand sqlCmd;
-		public static SQLiteDataAdapter sqlDA;
-		public static string DBname = "dbNotes.db3";
+		public SQLiteConnection sqlCon;
+		public SQLiteCommand sqlCmd;
+		public SQLiteDataAdapter sqlDA;
 		public bool dbExist = false;
+		
+		private const string DBname = "dbNotes.db3";
 			
 		public Database()
 		{

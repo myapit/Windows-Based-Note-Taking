@@ -34,7 +34,7 @@ string title = @"
 				 ╚══╝╚══╝     ╚═════╝     ╚═╝  ╚═══╝       ╚═╝   
                                                  
 ";
-			//textBox1.Text = title;
+			textBox1.Text = title;
 			//label1.Text = title;
 
 			//
