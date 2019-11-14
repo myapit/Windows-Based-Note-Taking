@@ -9,6 +9,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Collections.Generic;  
 using System.Data.SQLite;
 using System.Diagnostics;
 
@@ -69,7 +70,7 @@ namespace WBNT
 		/************** Private Function ************/
 		private void loadDataGridView(string searchSQL="")
 		{
-			int countRow = 0;
+			int countRow = 1;
 			string sqlQuery = "";
 			DB =  new Database();
 			DB.openConnection();			

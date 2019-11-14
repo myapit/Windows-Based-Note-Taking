@@ -24,7 +24,8 @@ namespace WBNT
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm());
+			//Application.Run(new MainForm()); // temporary disabled splash and mdiform
+			Application.Run(new frmNotes());
 		}
 		
 	}

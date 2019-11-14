@@ -219,6 +219,7 @@ namespace WBNT
 			this.Controls.Add(this.txtNote);
 			this.Controls.Add(this.txtTitle);
 			this.Controls.Add(this.dgvNotes);
+			this.Icon = global::WBNT.ResourceAssets.Narrator;
 			this.Name = "frmNotes";
 			this.Text = "My Note";
 			this.Load += new System.EventHandler(this.FrmNotesLoad);
