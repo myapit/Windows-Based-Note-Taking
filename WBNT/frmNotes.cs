@@ -33,6 +33,7 @@ namespace WBNT
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
+			dgvNotes.AllowUserToAddRows = false;
 		}
 		
 		void FrmNotesLoad(object sender, EventArgs e)
@@ -54,18 +55,36 @@ namespace WBNT
 			btnDelete.Enabled = true;
 		}
 		
-		
+		void BtnSearchClick(object sender, EventArgs e)
+		{
+			if (txtSearch.Text.Trim() != "") {
+				loadDataGridView(txtSearch.Text.Trim());
+				Debug.WriteLine(txtSearch.Text.Trim());
+			} else {
+				MessageBox.Show("Please enter text to search.","Search",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+				txtSearch.Focus();
+			}
+		}
+				
 		/************** Private Function ************/
-		private void loadDataGridView()
+		private void loadDataGridView(string searchSQL="")
 		{
 			int countRow = 0;
+			string sqlQuery = "";
 			DB =  new Database();
 			DB.openConnection();			
 			
 			dgvNotes.Rows.Clear();
 			dgvNotes.Refresh();
 			
-			SQLiteCommand cmdSQL = new SQLiteCommand("SELECT * FROM notes ORDER BY id ASC", DB.sqlCon);
+			if (searchSQL.Trim() == "")
+				sqlQuery = "SELECT * FROM notes ORDER BY id ASC";
+			else
+				sqlQuery = "SELECT * FROM notes WHERE title LIKE '%" + searchSQL + "%' OR note LIKE '%" + searchSQL + "%' ORDER BY id ASC";
+			
+			Debug.WriteLine(sqlQuery);
+			
+			SQLiteCommand cmdSQL = new SQLiteCommand(sqlQuery, DB.sqlCon);
 			
 			using( SQLiteDataReader readData =  cmdSQL.ExecuteReader())
 			{
@@ -135,10 +154,7 @@ namespace WBNT
 				loadDataGridView();
 			}
 		}
-		
-		
-		
-		
+				
 		
 		/**************** END ************/
 	}

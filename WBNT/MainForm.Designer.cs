@@ -198,6 +198,7 @@ namespace WBNT
 			this.MainMenuStrip = this.menuBar;
 			this.Name = "MainForm";
 			this.Text = "Windows Based Note Taking";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			this.menuBar.ResumeLayout(false);

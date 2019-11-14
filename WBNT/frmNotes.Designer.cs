@@ -26,6 +26,8 @@ namespace WBNT
 		private System.Windows.Forms.Button btnSave;
 		private System.Windows.Forms.Button btnDelete;
 		private System.Windows.Forms.Button btnReset;
+		private System.Windows.Forms.Button btnSearch;
+		private System.Windows.Forms.TextBox txtSearch;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -60,6 +62,8 @@ namespace WBNT
 			this.btnSave = new System.Windows.Forms.Button();
 			this.btnDelete = new System.Windows.Forms.Button();
 			this.btnReset = new System.Windows.Forms.Button();
+			this.btnSearch = new System.Windows.Forms.Button();
+			this.txtSearch = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvNotes)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -71,9 +75,10 @@ namespace WBNT
 			this.title,
 			this.note,
 			this.id});
-			this.dgvNotes.Location = new System.Drawing.Point(370, 34);
+			this.dgvNotes.Location = new System.Drawing.Point(370, 65);
 			this.dgvNotes.Name = "dgvNotes";
-			this.dgvNotes.Size = new System.Drawing.Size(439, 292);
+			this.dgvNotes.RowHeadersVisible = false;
+			this.dgvNotes.Size = new System.Drawing.Size(439, 261);
 			this.dgvNotes.TabIndex = 0;
 			this.dgvNotes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvNotesCellDoubleClick);
 			// 
@@ -124,7 +129,7 @@ namespace WBNT
 			// 
 			// label1
 			// 
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(13, 34);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(100, 23);
@@ -133,7 +138,7 @@ namespace WBNT
 			// 
 			// label2
 			// 
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.Location = new System.Drawing.Point(13, 92);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(100, 23);
@@ -142,43 +147,70 @@ namespace WBNT
 			// 
 			// btnSave
 			// 
-			this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSave.BackColor = System.Drawing.Color.DarkOliveGreen;
+			this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.btnSave.Location = new System.Drawing.Point(13, 286);
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(100, 40);
-			this.btnSave.TabIndex = 5;
+			this.btnSave.TabIndex = 3;
 			this.btnSave.Text = "&Save";
-			this.btnSave.UseVisualStyleBackColor = true;
+			this.btnSave.UseVisualStyleBackColor = false;
 			this.btnSave.Click += new System.EventHandler(this.BtnSaveClick);
 			// 
 			// btnDelete
 			// 
-			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnDelete.BackColor = System.Drawing.Color.OrangeRed;
+			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnDelete.Location = new System.Drawing.Point(132, 286);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(100, 40);
-			this.btnDelete.TabIndex = 6;
+			this.btnDelete.TabIndex = 4;
 			this.btnDelete.Text = "&Delete";
-			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.UseVisualStyleBackColor = false;
 			this.btnDelete.Click += new System.EventHandler(this.BtnDeleteClick);
 			// 
 			// btnReset
 			// 
-			this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnReset.BackColor = System.Drawing.Color.Violet;
+			this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnReset.Location = new System.Drawing.Point(245, 286);
 			this.btnReset.Name = "btnReset";
 			this.btnReset.Size = new System.Drawing.Size(100, 40);
-			this.btnReset.TabIndex = 7;
+			this.btnReset.TabIndex = 5;
 			this.btnReset.Text = "Reset";
-			this.btnReset.UseVisualStyleBackColor = true;
+			this.btnReset.UseVisualStyleBackColor = false;
 			this.btnReset.Click += new System.EventHandler(this.BtnResetClick);
+			// 
+			// btnSearch
+			// 
+			this.btnSearch.BackColor = System.Drawing.Color.DodgerBlue;
+			this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
+			this.btnSearch.Location = new System.Drawing.Point(720, 26);
+			this.btnSearch.Name = "btnSearch";
+			this.btnSearch.Size = new System.Drawing.Size(88, 31);
+			this.btnSearch.TabIndex = 7;
+			this.btnSearch.Text = "S&earch";
+			this.btnSearch.UseVisualStyleBackColor = false;
+			this.btnSearch.Click += new System.EventHandler(this.BtnSearchClick);
+			// 
+			// txtSearch
+			// 
+			this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtSearch.Location = new System.Drawing.Point(370, 32);
+			this.txtSearch.Name = "txtSearch";
+			this.txtSearch.Size = new System.Drawing.Size(317, 22);
+			this.txtSearch.TabIndex = 6;
 			// 
 			// frmNotes
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.ClientSize = new System.Drawing.Size(835, 338);
+			this.ClientSize = new System.Drawing.Size(918, 383);
+			this.Controls.Add(this.txtSearch);
+			this.Controls.Add(this.btnSearch);
 			this.Controls.Add(this.btnReset);
 			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.btnSave);
@@ -188,7 +220,7 @@ namespace WBNT
 			this.Controls.Add(this.txtTitle);
 			this.Controls.Add(this.dgvNotes);
 			this.Name = "frmNotes";
-			this.Text = "frmNotes";
+			this.Text = "My Note";
 			this.Load += new System.EventHandler(this.FrmNotesLoad);
 			((System.ComponentModel.ISupportInitialize)(this.dgvNotes)).EndInit();
 			this.ResumeLayout(false);
