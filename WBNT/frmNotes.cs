@@ -23,6 +23,7 @@ namespace WBNT
 	{
 		private Database DB;
 		private string IDnote;
+		private int totalRecord = 0;
 		
 		public frmNotes()
 		{
@@ -39,6 +40,7 @@ namespace WBNT
 		
 		void FrmNotesLoad(object sender, EventArgs e)
 		{
+			resetForm();
 			loadDataGridView();
 		}
 		
@@ -66,7 +68,42 @@ namespace WBNT
 				txtSearch.Focus();
 			}
 		}
-				
+		
+		
+		void BtnDeleteClick(object sender, EventArgs e)
+		{
+			DialogResult confirm = MessageBox.Show("Are you sure to permanently DELETE this note.","Confirmation",MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+			if ( confirm == DialogResult.Yes)
+			{
+				SQLiteCommand insertSQL = new SQLiteCommand("DELETE FROM notes WHERE id=$id", DB.sqlCon);
+				//insertSQL.Parameters.Add("$id", System.Data.DbType.String).Value = IDPerson;
+				insertSQL.Parameters.AddWithValue("$id",IDnote.ToString());
+				insertSQL.ExecuteNonQuery();
+				resetForm();
+				loadDataGridView();	
+			}
+		}
+		
+		
+		void BtnSaveClick(object sender, EventArgs e)
+		{
+			saveNote();
+		}
+
+		void BtnRefreshClick(object sender, EventArgs e)
+		{
+			loadDataGridView();
+		}
+		
+		void TxtNoteKeyDown(object sender, KeyEventArgs e)
+		{
+			 if(e.KeyCode==Keys.Enter)
+			 {
+			 	//saveNote();
+			 }
+		
+		}
+			
 		/************** Private Function ************/
 		private void loadDataGridView(string searchSQL="")
 		{
@@ -102,7 +139,8 @@ namespace WBNT
 				}
 				
 			} //End Using
-			
+			totalRecord = countRow;
+			statusBar1.Text = "Total Records : " + (totalRecord-1);
 		} //end load grid view
 		
 		private void resetForm()
@@ -111,25 +149,11 @@ namespace WBNT
 			txtNote.Text = "";
 			btnDelete.Enabled = false;
 			btnSave.Text = "&Save";
+			txtTitle.Select();
 			txtTitle.Focus();
 		}
 		
-		void BtnDeleteClick(object sender, EventArgs e)
-		{
-			DialogResult confirm = MessageBox.Show("Are you sure to permanently DELETE this note.","Confirmation",MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-			if ( confirm == DialogResult.Yes)
-			{
-				SQLiteCommand insertSQL = new SQLiteCommand("DELETE FROM notes WHERE id=$id", DB.sqlCon);
-				//insertSQL.Parameters.Add("$id", System.Data.DbType.String).Value = IDPerson;
-				insertSQL.Parameters.AddWithValue("$id",IDnote.ToString());
-				insertSQL.ExecuteNonQuery();
-				resetForm();
-				loadDataGridView();	
-			}
-		}
-		
-		
-		void BtnSaveClick(object sender, EventArgs e)
+		private void saveNote()
 		{
 			if (btnSave.Text == "&Save")
 			{
@@ -159,7 +183,10 @@ namespace WBNT
 				loadDataGridView();
 			}
 		}
-				
+		void DgvNotesCellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			dgvNotes.Rows[e.RowIndex].Selected = true;
+		}
 		
 		/**************** END ************/
 	}
