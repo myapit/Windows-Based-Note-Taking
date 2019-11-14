@@ -78,7 +78,7 @@ namespace WBNT
 			this.dgvNotes.Location = new System.Drawing.Point(370, 65);
 			this.dgvNotes.Name = "dgvNotes";
 			this.dgvNotes.RowHeadersVisible = false;
-			this.dgvNotes.Size = new System.Drawing.Size(439, 261);
+			this.dgvNotes.Size = new System.Drawing.Size(505, 261);
 			this.dgvNotes.TabIndex = 0;
 			this.dgvNotes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvNotesCellDoubleClick);
 			// 
@@ -187,7 +187,7 @@ namespace WBNT
 			this.btnSearch.BackColor = System.Drawing.Color.DodgerBlue;
 			this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
-			this.btnSearch.Location = new System.Drawing.Point(720, 26);
+			this.btnSearch.Location = new System.Drawing.Point(784, 26);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(88, 31);
 			this.btnSearch.TabIndex = 7;
@@ -200,7 +200,7 @@ namespace WBNT
 			this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSearch.Location = new System.Drawing.Point(370, 32);
 			this.txtSearch.Name = "txtSearch";
-			this.txtSearch.Size = new System.Drawing.Size(317, 22);
+			this.txtSearch.Size = new System.Drawing.Size(370, 22);
 			this.txtSearch.TabIndex = 6;
 			// 
 			// frmNotes

@@ -116,12 +116,16 @@ namespace WBNT
 		
 		void BtnDeleteClick(object sender, EventArgs e)
 		{
-			SQLiteCommand insertSQL = new SQLiteCommand("DELETE FROM Person WHERE id=$id", DB.sqlCon);
-			//insertSQL.Parameters.Add("$id", System.Data.DbType.String).Value = IDPerson;
-			insertSQL.Parameters.AddWithValue("$id",IDnote.ToString());
-			insertSQL.ExecuteNonQuery();
-			resetForm();
-			loadDataGridView();
+			DialogResult confirm = MessageBox.Show("Are you sure to permanently DELETE this note.","Confirmation",MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+			if ( confirm == DialogResult.Yes)
+			{
+				SQLiteCommand insertSQL = new SQLiteCommand("DELETE FROM notes WHERE id=$id", DB.sqlCon);
+				//insertSQL.Parameters.Add("$id", System.Data.DbType.String).Value = IDPerson;
+				insertSQL.Parameters.AddWithValue("$id",IDnote.ToString());
+				insertSQL.ExecuteNonQuery();
+				resetForm();
+				loadDataGridView();	
+			}
 		}
 		
 		
