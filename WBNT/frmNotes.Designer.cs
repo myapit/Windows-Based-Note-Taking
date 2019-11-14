@@ -149,6 +149,7 @@ namespace WBNT
 			this.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.txtNote.Size = new System.Drawing.Size(435, 244);
 			this.txtNote.TabIndex = 2;
+			this.txtNote.WordWrap = false;
 			this.txtNote.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNoteKeyDown);
 			// 
 			// label1
