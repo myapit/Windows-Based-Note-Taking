@@ -32,6 +32,7 @@ namespace WBNT
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
 		private System.Windows.Forms.ToolStripStatusLabel statusBar1;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -73,6 +74,7 @@ namespace WBNT
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusBar1 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
 			((System.ComponentModel.ISupportInitialize)(this.dgvNotes)).BeginInit();
 			this.statusStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -142,12 +144,12 @@ namespace WBNT
 			// 
 			// txtNote
 			// 
-			this.txtNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtNote.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtNote.Location = new System.Drawing.Point(25, 116);
 			this.txtNote.Multiline = true;
 			this.txtNote.Name = "txtNote";
 			this.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.txtNote.Size = new System.Drawing.Size(435, 244);
+			this.txtNote.Size = new System.Drawing.Size(435, 260);
 			this.txtNote.TabIndex = 2;
 			this.txtNote.WordWrap = false;
 			this.txtNote.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNoteKeyDown);
@@ -175,9 +177,9 @@ namespace WBNT
 			this.btnSave.BackColor = System.Drawing.Color.Blue;
 			this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnSave.Location = new System.Drawing.Point(26, 373);
+			this.btnSave.Location = new System.Drawing.Point(26, 386);
 			this.btnSave.Name = "btnSave";
-			this.btnSave.Size = new System.Drawing.Size(100, 40);
+			this.btnSave.Size = new System.Drawing.Size(100, 31);
 			this.btnSave.TabIndex = 3;
 			this.btnSave.Text = "&Save";
 			this.btnSave.UseVisualStyleBackColor = false;
@@ -187,9 +189,9 @@ namespace WBNT
 			// 
 			this.btnDelete.BackColor = System.Drawing.Color.OrangeRed;
 			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDelete.Location = new System.Drawing.Point(158, 373);
+			this.btnDelete.Location = new System.Drawing.Point(158, 386);
 			this.btnDelete.Name = "btnDelete";
-			this.btnDelete.Size = new System.Drawing.Size(100, 40);
+			this.btnDelete.Size = new System.Drawing.Size(100, 31);
 			this.btnDelete.TabIndex = 4;
 			this.btnDelete.Text = "&Delete";
 			this.btnDelete.UseVisualStyleBackColor = false;
@@ -199,9 +201,9 @@ namespace WBNT
 			// 
 			this.btnReset.BackColor = System.Drawing.Color.Violet;
 			this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnReset.Location = new System.Drawing.Point(293, 373);
+			this.btnReset.Location = new System.Drawing.Point(293, 386);
 			this.btnReset.Name = "btnReset";
-			this.btnReset.Size = new System.Drawing.Size(100, 40);
+			this.btnReset.Size = new System.Drawing.Size(100, 31);
 			this.btnReset.TabIndex = 5;
 			this.btnReset.Text = "Reset";
 			this.btnReset.UseVisualStyleBackColor = false;
@@ -212,9 +214,9 @@ namespace WBNT
 			this.btnSearch.BackColor = System.Drawing.Color.DodgerBlue;
 			this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
-			this.btnSearch.Location = new System.Drawing.Point(793, 26);
+			this.btnSearch.Location = new System.Drawing.Point(807, 32);
 			this.btnSearch.Name = "btnSearch";
-			this.btnSearch.Size = new System.Drawing.Size(88, 31);
+			this.btnSearch.Size = new System.Drawing.Size(88, 25);
 			this.btnSearch.TabIndex = 7;
 			this.btnSearch.Text = "S&earch";
 			this.btnSearch.UseVisualStyleBackColor = false;
@@ -225,17 +227,18 @@ namespace WBNT
 			this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSearch.Location = new System.Drawing.Point(488, 32);
 			this.txtSearch.Name = "txtSearch";
-			this.txtSearch.Size = new System.Drawing.Size(286, 22);
+			this.txtSearch.Size = new System.Drawing.Size(305, 22);
 			this.txtSearch.TabIndex = 6;
+			this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSearchKeyDown);
 			// 
 			// btnRefresh
 			// 
 			this.btnRefresh.BackColor = System.Drawing.Color.DarkMagenta;
 			this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnRefresh.ForeColor = System.Drawing.SystemColors.Control;
-			this.btnRefresh.Location = new System.Drawing.Point(905, 27);
+			this.btnRefresh.Location = new System.Drawing.Point(905, 33);
 			this.btnRefresh.Name = "btnRefresh";
-			this.btnRefresh.Size = new System.Drawing.Size(88, 31);
+			this.btnRefresh.Size = new System.Drawing.Size(88, 25);
 			this.btnRefresh.TabIndex = 8;
 			this.btnRefresh.Text = "Refresh";
 			this.btnRefresh.UseVisualStyleBackColor = false;
@@ -245,6 +248,7 @@ namespace WBNT
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 			this.toolStripStatusLabel1,
+			this.toolStripStatusLabel2,
 			this.statusBar1});
 			this.statusStrip1.Location = new System.Drawing.Point(0, 426);
 			this.statusStrip1.Name = "statusStrip1";
@@ -255,7 +259,7 @@ namespace WBNT
 			// toolStripStatusLabel1
 			// 
 			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-			this.toolStripStatusLabel1.Size = new System.Drawing.Size(883, 17);
+			this.toolStripStatusLabel1.Size = new System.Drawing.Size(757, 17);
 			this.toolStripStatusLabel1.Spring = true;
 			// 
 			// statusBar1
@@ -263,6 +267,12 @@ namespace WBNT
 			this.statusBar1.Name = "statusBar1";
 			this.statusBar1.Size = new System.Drawing.Size(118, 17);
 			this.statusBar1.Text = "toolStripStatusLabel2";
+			// 
+			// toolStripStatusLabel2
+			// 
+			this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+			this.toolStripStatusLabel2.Size = new System.Drawing.Size(95, 17);
+			this.toolStripStatusLabel2.Text = "myapit.github.io";
 			// 
 			// frmNotes
 			// 
@@ -286,7 +296,7 @@ namespace WBNT
 			this.Icon = global::WBNT.ResourceAssets.Narrator;
 			this.MaximizeBox = false;
 			this.Name = "frmNotes";
-			this.Text = "My Note";
+			this.Text = "My Note (minimal)";
 			this.Load += new System.EventHandler(this.FrmNotesLoad);
 			((System.ComponentModel.ISupportInitialize)(this.dgvNotes)).EndInit();
 			this.statusStrip1.ResumeLayout(false);

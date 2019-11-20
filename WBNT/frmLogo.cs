@@ -34,12 +34,18 @@ string title = @"
 				 ╚══╝╚══╝     ╚═════╝     ╚═╝  ╚═══╝       ╚═╝   
                                                  
 ";
-			textBox1.Text = title;
+			txtLoad.Text = title;
 			//label1.Text = title;
 
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
+		}
+		
+		void FrmLogoLoad(object sender, EventArgs e)
+		{
+			string teks = "My Note\n Version: 0.1\nAuthor: Myapit\n URL: myapit.github.io";
+			txtLoad.Text = teks;
 		}
 	}
 }

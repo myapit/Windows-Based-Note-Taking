@@ -12,7 +12,8 @@ using System.Windows.Forms;
 using System.Collections.Generic;  
 using System.Data.SQLite;
 using System.Diagnostics;
-
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace WBNT
 {
@@ -30,7 +31,13 @@ namespace WBNT
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
+			//Thread t = new Thread(startSplash); //new ThreadStart(startSplash));
+			//t.SetApartmentState(ApartmentState.STA);
+			//t.IsBackground = true;
+			//t.Start();
+			//Thread.Sleep(2000);   
 			InitializeComponent();
+			//t.Abort();
 			
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
@@ -38,10 +45,16 @@ namespace WBNT
 			dgvNotes.AllowUserToAddRows = false;
 		}
 		
+		public void startSplash()
+		{
+			Application.Run(new frmLogo());
+		}
+		
 		void FrmNotesLoad(object sender, EventArgs e)
 		{
 			resetForm();
 			loadDataGridView();
+			this.Activate();
 		}
 		
 		void BtnResetClick(object sender, EventArgs e)
@@ -60,13 +73,7 @@ namespace WBNT
 		
 		void BtnSearchClick(object sender, EventArgs e)
 		{
-			if (txtSearch.Text.Trim() != "") {
-				loadDataGridView(txtSearch.Text.Trim());
-				Debug.WriteLine(txtSearch.Text.Trim());
-			} else {
-				MessageBox.Show("Please enter text to search.","Search",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-				txtSearch.Focus();
-			}
+			searchText();
 		}
 		
 		
@@ -103,8 +110,30 @@ namespace WBNT
 			 }
 		
 		}
-			
+		
+
+		void TxtSearchKeyDown(object sender, KeyEventArgs e)
+		{
+			if(e.KeyCode==Keys.Enter)
+			 {
+				searchText();
+			 }
+		}
+		
+		
 		/************** Private Function ************/
+		
+		private void searchText()
+		{
+			if (txtSearch.Text.Trim() != "") {
+				loadDataGridView(txtSearch.Text.Trim());
+				Debug.WriteLine(txtSearch.Text.Trim());
+			} else {
+				MessageBox.Show("Please enter text to search.","Search",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+				txtSearch.Focus();
+			}
+		}
+		
 		private void loadDataGridView(string searchSQL="")
 		{
 			int countRow = 1;
@@ -187,6 +216,7 @@ namespace WBNT
 		{
 			dgvNotes.Rows[e.RowIndex].Selected = true;
 		}
+		
 		
 		/**************** END ************/
 	}
