@@ -24,7 +24,7 @@ namespace WBNT
 		public SQLiteDataAdapter sqlDA;
 		public bool dbExist = false;
 		
-		private const string DBname = "dbNotes.db3";
+		public string DBname = "dbNotes.db3";
 			
 		public Database()
 		{

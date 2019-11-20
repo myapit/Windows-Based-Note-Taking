@@ -30,9 +30,10 @@ namespace WBNT
 		private System.Windows.Forms.TextBox txtSearch;
 		private System.Windows.Forms.Button btnRefresh;
 		private System.Windows.Forms.StatusStrip statusStrip1;
-		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+		private System.Windows.Forms.ToolStripStatusLabel statusBarSpace;
 		private System.Windows.Forms.ToolStripStatusLabel statusBar1;
-		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+		private System.Windows.Forms.ToolStripStatusLabel statusBarCopyright;
+		private System.Windows.Forms.ToolStripStatusLabel statusBarDBName;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -72,9 +73,10 @@ namespace WBNT
 			this.txtSearch = new System.Windows.Forms.TextBox();
 			this.btnRefresh = new System.Windows.Forms.Button();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.statusBarSpace = new System.Windows.Forms.ToolStripStatusLabel();
+			this.statusBarDBName = new System.Windows.Forms.ToolStripStatusLabel();
+			this.statusBarCopyright = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusBar1 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
 			((System.ComponentModel.ISupportInitialize)(this.dgvNotes)).BeginInit();
 			this.statusStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -247,32 +249,43 @@ namespace WBNT
 			// statusStrip1
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.toolStripStatusLabel1,
-			this.toolStripStatusLabel2,
+			this.statusBarSpace,
+			this.statusBarDBName,
+			this.statusBarCopyright,
 			this.statusBar1});
-			this.statusStrip1.Location = new System.Drawing.Point(0, 426);
+			this.statusStrip1.Location = new System.Drawing.Point(0, 424);
 			this.statusStrip1.Name = "statusStrip1";
-			this.statusStrip1.Size = new System.Drawing.Size(1016, 22);
+			this.statusStrip1.Size = new System.Drawing.Size(1016, 24);
 			this.statusStrip1.TabIndex = 9;
 			this.statusStrip1.Text = "statusStrip1";
 			// 
-			// toolStripStatusLabel1
+			// statusBarSpace
 			// 
-			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-			this.toolStripStatusLabel1.Size = new System.Drawing.Size(757, 17);
-			this.toolStripStatusLabel1.Spring = true;
+			this.statusBarSpace.Name = "statusBarSpace";
+			this.statusBarSpace.Size = new System.Drawing.Size(736, 19);
+			this.statusBarSpace.Spring = true;
+			// 
+			// statusBarDBName
+			// 
+			this.statusBarDBName.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+			this.statusBarDBName.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
+			this.statusBarDBName.Name = "statusBarDBName";
+			this.statusBarDBName.Size = new System.Drawing.Size(60, 19);
+			this.statusBarDBName.Text = "DBNAME";
+			// 
+			// statusBarCopyright
+			// 
+			this.statusBarCopyright.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+			this.statusBarCopyright.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
+			this.statusBarCopyright.Name = "statusBarCopyright";
+			this.statusBarCopyright.Size = new System.Drawing.Size(99, 19);
+			this.statusBarCopyright.Text = "myapit.github.io";
 			// 
 			// statusBar1
 			// 
 			this.statusBar1.Name = "statusBar1";
-			this.statusBar1.Size = new System.Drawing.Size(118, 17);
-			this.statusBar1.Text = "toolStripStatusLabel2";
-			// 
-			// toolStripStatusLabel2
-			// 
-			this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-			this.toolStripStatusLabel2.Size = new System.Drawing.Size(95, 17);
-			this.toolStripStatusLabel2.Text = "myapit.github.io";
+			this.statusBar1.Size = new System.Drawing.Size(75, 19);
+			this.statusBar1.Text = "record count";
 			// 
 			// frmNotes
 			// 

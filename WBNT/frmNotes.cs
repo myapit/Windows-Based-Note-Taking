@@ -14,6 +14,7 @@ using System.Data.SQLite;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace WBNT
 {
@@ -25,6 +26,7 @@ namespace WBNT
 		private Database DB;
 		private string IDnote;
 		private int totalRecord = 0;
+		private OpenFileDialog openFileDialogDB;
 		
 		public frmNotes()
 		{
@@ -42,6 +44,7 @@ namespace WBNT
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
+			DB =  new Database();
 			dgvNotes.AllowUserToAddRows = false;
 		}
 		
@@ -52,8 +55,10 @@ namespace WBNT
 		
 		void FrmNotesLoad(object sender, EventArgs e)
 		{
+			//ToDo: selectDB();
 			resetForm();
 			loadDataGridView();
+			statusBarDBName.Text = DB.DBname;
 			this.Activate();
 		}
 		
@@ -122,6 +127,34 @@ namespace WBNT
 		
 		
 		/************** Private Function ************/
+		private void selectDB()
+		{
+			int size = -1;
+			openFileDialogDB = new OpenFileDialog();
+			openFileDialogDB.Filter = "Image Files|*.db;*.db3";			
+			DialogResult result = openFileDialogDB.ShowDialog(); // Show the dialog.
+			if (result == DialogResult.OK) // Test result.
+			{
+			   string file = openFileDialogDB.FileName;
+			   try
+			   {
+			      string text = File.ReadAllText(file);
+			      size = text.Length;
+			     // label1.Text = openFileDialogDB.FileName;
+			     DB.DBname = file;
+			      statusBarDBName.Text = "DB : " + file;
+			      Debug.WriteLine(file);
+			      Debug.WriteLine( DB.DBname);
+			   }
+			   catch (IOException)
+			   {
+			   	MessageBox.Show("Error " , "error");
+			   }
+			} else {
+				MessageBox.Show("Application cannot load, please select correct DB", "error");
+				Application.Exit();
+			}
+		}
 		
 		private void searchText()
 		{
@@ -138,7 +171,7 @@ namespace WBNT
 		{
 			int countRow = 1;
 			string sqlQuery = "";
-			DB =  new Database();
+			//DB =  new Database();
 			DB.openConnection();			
 			
 			dgvNotes.Rows.Clear();
