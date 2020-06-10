@@ -102,7 +102,7 @@ namespace WBNT
 			this.dgvNotes.MultiSelect = false;
 			this.dgvNotes.Name = "dgvNotes";
 			this.dgvNotes.RowHeadersVisible = false;
-			this.dgvNotes.Size = new System.Drawing.Size(505, 620);
+			this.dgvNotes.Size = new System.Drawing.Size(505, 540);
 			this.dgvNotes.TabIndex = 0;
 			this.dgvNotes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvNotesCellClick);
 			this.dgvNotes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvNotesCellDoubleClick);
@@ -151,7 +151,7 @@ namespace WBNT
 			this.txtNote.Multiline = true;
 			this.txtNote.Name = "txtNote";
 			this.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.txtNote.Size = new System.Drawing.Size(435, 511);
+			this.txtNote.Size = new System.Drawing.Size(435, 435);
 			this.txtNote.TabIndex = 2;
 			this.txtNote.WordWrap = false;
 			this.txtNote.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNoteKeyDown);
@@ -179,7 +179,7 @@ namespace WBNT
 			this.btnSave.BackColor = System.Drawing.Color.Blue;
 			this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnSave.Location = new System.Drawing.Point(26, 650);
+			this.btnSave.Location = new System.Drawing.Point(26, 574);
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(100, 31);
 			this.btnSave.TabIndex = 3;
@@ -192,7 +192,7 @@ namespace WBNT
 			this.btnDelete.BackColor = System.Drawing.Color.DarkRed;
 			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.btnDelete.Location = new System.Drawing.Point(158, 650);
+			this.btnDelete.Location = new System.Drawing.Point(158, 574);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(100, 31);
 			this.btnDelete.TabIndex = 4;
@@ -205,7 +205,7 @@ namespace WBNT
 			this.btnReset.BackColor = System.Drawing.Color.Purple;
 			this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnReset.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.btnReset.Location = new System.Drawing.Point(293, 650);
+			this.btnReset.Location = new System.Drawing.Point(293, 574);
 			this.btnReset.Name = "btnReset";
 			this.btnReset.Size = new System.Drawing.Size(104, 31);
 			this.btnReset.TabIndex = 5;
@@ -255,7 +255,7 @@ namespace WBNT
 			this.statusBarDBName,
 			this.statusBarCopyright,
 			this.statusBar1});
-			this.statusStrip1.Location = new System.Drawing.Point(0, 705);
+			this.statusStrip1.Location = new System.Drawing.Point(0, 657);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(1008, 24);
 			this.statusStrip1.TabIndex = 9;
@@ -294,7 +294,7 @@ namespace WBNT
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.ClientSize = new System.Drawing.Size(1008, 729);
+			this.ClientSize = new System.Drawing.Size(1008, 681);
 			this.Controls.Add(this.statusStrip1);
 			this.Controls.Add(this.btnRefresh);
 			this.Controls.Add(this.txtSearch);
