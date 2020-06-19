@@ -73,6 +73,7 @@ namespace WBNT
 			txtTitle.Text = dgvNotes.CurrentRow.Cells[1].Value.ToString();
 			txtNote.Text = dgvNotes.CurrentRow.Cells[2].Value.ToString();
 			btnSave.Text = "&Update";
+			btnSaveClose.Text = "&Update && Close";
 			btnDelete.Enabled = true;
 		}
 		
@@ -99,9 +100,14 @@ namespace WBNT
 		
 		void BtnSaveClick(object sender, EventArgs e)
 		{
-			saveNote();
+			saveNote("s");
 		}
 
+		void BtnSaveCloseClick(object sender, EventArgs e)
+		{
+			saveNote("sc");
+		}
+		
 		void BtnRefreshClick(object sender, EventArgs e)
 		{
 			loadDataGridView();
@@ -211,13 +217,32 @@ namespace WBNT
 			txtNote.Text = "";
 			btnDelete.Enabled = false;
 			btnSave.Text = "&Save";
+			btnSaveClose.Text = "&Save && Close";
 			txtTitle.Select();
 			txtTitle.Focus();
 		}
 		
-		private void saveNote()
+		private void saveNote(string btnType = "s")
 		{
-			if (btnSave.Text == "&Save")
+			if (btnSave.Text == "&Save" && btnType == "s")
+			{
+				SQLiteCommand insertSQL = new SQLiteCommand("INSERT INTO notes (title, note) VALUES ($title, $note)", DB.sqlCon);
+				insertSQL.Parameters.Add("$title", System.Data.DbType.String).Value = txtTitle.Text.Trim();
+				insertSQL.Parameters.Add("$note", System.Data.DbType.String).Value =txtNote.Text.Trim();
+	
+			    try {
+			        insertSQL.ExecuteNonQuery();
+			    }
+			    catch (Exception ex) {
+			        throw new Exception(ex.Message);
+			    }
+				
+			    //resetForm();
+			    displayStatus(0);
+			    loadDataGridView();
+			}
+			
+			if (btnSaveClose.Text == "&Save && Close" && btnType == "sc" )
 			{
 				SQLiteCommand insertSQL = new SQLiteCommand("INSERT INTO notes (title, note) VALUES ($title, $note)", DB.sqlCon);
 				insertSQL.Parameters.Add("$title", System.Data.DbType.String).Value = txtTitle.Text.Trim();
@@ -231,23 +256,66 @@ namespace WBNT
 			    }
 				
 			    resetForm();
+			    displayStatus(1);
 			    loadDataGridView();
 			}
 			
-			if (btnSave.Text == "&Update")
+			if (btnSaveClose.Text == "&Update && Close"  && btnType == "sc" )
 			{
 				SQLiteCommand insertSQL = new SQLiteCommand("UPDATE notes Set title=$title, note=$note WHERE id=$id", DB.sqlCon);
 				insertSQL.Parameters.Add("$title", System.Data.DbType.String).Value = txtTitle.Text.Trim();
 				insertSQL.Parameters.Add("$note", System.Data.DbType.String).Value =txtNote.Text.Trim();
 				insertSQL.Parameters.Add("$id", System.Data.DbType.String).Value = IDnote;
 				insertSQL.ExecuteNonQuery();
+				displayStatus(2);
 				resetForm();
 				loadDataGridView();
 			}
+			
+			if (btnSave.Text == "&Update" && btnType == "s" )
+			{
+				SQLiteCommand insertSQL = new SQLiteCommand("UPDATE notes Set title=$title, note=$note WHERE id=$id", DB.sqlCon);
+				insertSQL.Parameters.Add("$title", System.Data.DbType.String).Value = txtTitle.Text.Trim();
+				insertSQL.Parameters.Add("$note", System.Data.DbType.String).Value =txtNote.Text.Trim();
+				insertSQL.Parameters.Add("$id", System.Data.DbType.String).Value = IDnote;
+				insertSQL.ExecuteNonQuery();
+				//resetForm();
+				displayStatus(3);
+				loadDataGridView();
+			}
+			
 		}
 		void DgvNotesCellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			dgvNotes.Rows[e.RowIndex].Selected = true;
+		}
+		
+		public void displayStatus(int type=0)
+		{
+			//DateTime dt = new DateTime();
+			
+			switch(type)
+			{
+				case 0: //save and remain open
+					lblStatusNote.Text = "Notes saved at " + DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
+					break;
+					
+				case 1: //save and close
+					lblStatusNote.Text = "Notes last saved at " + DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
+					break;
+				
+				case 2: // update
+					lblStatusNote.Text = "Notes updated at " + DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
+					break;
+				
+				case 3: //save and close
+					lblStatusNote.Text = "Notes last updated at " + DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
+					break;
+					
+				default:
+					lblStatusNote .Text = "Uknown status :" + type.ToString();
+					break;
+			}
 		}
 		
 		
