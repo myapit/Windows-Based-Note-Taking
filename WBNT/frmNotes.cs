@@ -297,19 +297,19 @@ namespace WBNT
 			switch(type)
 			{
 				case 0: //save and remain open
-					lblStatusNote.Text = "Notes saved at " + DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
+					lblStatusNote.Text = "Saved at " + DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
 					break;
 					
 				case 1: //save and close
-					lblStatusNote.Text = "Notes last saved at " + DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
+					lblStatusNote.Text = "Last saved at " + DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
 					break;
 				
 				case 2: // update
-					lblStatusNote.Text = "Notes updated at " + DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
+					lblStatusNote.Text = "Updated at " + DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
 					break;
 				
 				case 3: //save and close
-					lblStatusNote.Text = "Notes last updated at " + DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
+					lblStatusNote.Text = "Last updated at " + DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
 					break;
 					
 				default:

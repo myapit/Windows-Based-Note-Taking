@@ -308,9 +308,10 @@ namespace WBNT
 			// 
 			// lblStatusNote
 			// 
-			this.lblStatusNote.Location = new System.Drawing.Point(36, 574);
+			this.lblStatusNote.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblStatusNote.Location = new System.Drawing.Point(26, 574);
 			this.lblStatusNote.Name = "lblStatusNote";
-			this.lblStatusNote.Size = new System.Drawing.Size(236, 23);
+			this.lblStatusNote.Size = new System.Drawing.Size(282, 31);
 			this.lblStatusNote.TabIndex = 11;
 			// 
 			// frmNotes
