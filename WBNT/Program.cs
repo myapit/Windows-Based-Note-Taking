@@ -8,6 +8,7 @@
  */
 using System;
 using System.Windows.Forms;
+using System.Threading; // to use mutex
 
 namespace WBNT
 {
@@ -19,13 +20,25 @@ namespace WBNT
 		/// <summary>
 		/// Program entry point.
 		/// </summary>
+		/// 
+		
+		static Mutex mutex = new Mutex(true, "{8F6F0AC4-B9A1-45fd-A8CF-72F04E6BDE8F}");
+
 		[STAThread]
 		private static void Main(string[] args)
 		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			//Application.Run(new MainForm()); // temporary disabled splash and mdiform
-			Application.Run(new frmNotes());
+				
+			if(mutex.WaitOne(TimeSpan.Zero, true)) 
+			{
+				Application.EnableVisualStyles();
+				Application.SetCompatibleTextRenderingDefault(false);
+				//Application.Run(new MainForm()); // temporary disabled splash and mdiform
+				Application.Run(new frmNotes());
+				mutex.ReleaseMutex();
+	        } else {
+				MessageBox.Show("only one instance at a time");
+	        }
+			
 		}
 		
 	}
