@@ -60,6 +60,13 @@ namespace WBNT
 			loadDataGridView();
 			statusBarDBName.Text = DB.DBname;
 			this.Activate();
+			
+			
+			Rectangle bounds = Screen.PrimaryScreen.Bounds;
+			Console.WriteLine("Primary screen bounds:  {bounds.Width}x{bounds.Height}");
+			
+			Rectangle workingArea = Screen.PrimaryScreen.WorkingArea;
+			Console.WriteLine("Primary screen working area:  {workingArea.Width}x{workingArea.Height}");
 		}
 		
 		void BtnResetClick(object sender, EventArgs e)

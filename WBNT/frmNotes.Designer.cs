@@ -102,11 +102,11 @@ namespace WBNT
 			this.note,
 			this.id});
 			this.dgvNotes.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.dgvNotes.Location = new System.Drawing.Point(488, 65);
+			this.dgvNotes.Location = new System.Drawing.Point(764, 65);
 			this.dgvNotes.MultiSelect = false;
 			this.dgvNotes.Name = "dgvNotes";
 			this.dgvNotes.RowHeadersVisible = false;
-			this.dgvNotes.Size = new System.Drawing.Size(505, 540);
+			this.dgvNotes.Size = new System.Drawing.Size(460, 540);
 			this.dgvNotes.TabIndex = 0;
 			this.dgvNotes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvNotesCellClick);
 			this.dgvNotes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvNotesCellDoubleClick);
@@ -145,7 +145,7 @@ namespace WBNT
 			this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtTitle.Location = new System.Drawing.Point(25, 65);
 			this.txtTitle.Name = "txtTitle";
-			this.txtTitle.Size = new System.Drawing.Size(435, 22);
+			this.txtTitle.Size = new System.Drawing.Size(704, 22);
 			this.txtTitle.TabIndex = 1;
 			// 
 			// txtNote
@@ -155,7 +155,7 @@ namespace WBNT
 			this.txtNote.Multiline = true;
 			this.txtNote.Name = "txtNote";
 			this.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.txtNote.Size = new System.Drawing.Size(435, 382);
+			this.txtNote.Size = new System.Drawing.Size(704, 382);
 			this.txtNote.TabIndex = 2;
 			this.txtNote.WordWrap = false;
 			this.txtNote.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNoteKeyDown);
@@ -185,7 +185,7 @@ namespace WBNT
 			this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.btnSave.Location = new System.Drawing.Point(25, 518);
 			this.btnSave.Name = "btnSave";
-			this.btnSave.Size = new System.Drawing.Size(100, 31);
+			this.btnSave.Size = new System.Drawing.Size(145, 31);
 			this.btnSave.TabIndex = 3;
 			this.btnSave.Text = "&Save";
 			this.btnSave.UseVisualStyleBackColor = false;
@@ -196,9 +196,9 @@ namespace WBNT
 			this.btnDelete.BackColor = System.Drawing.Color.DarkRed;
 			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.btnDelete.Location = new System.Drawing.Point(324, 574);
+			this.btnDelete.Location = new System.Drawing.Point(441, 574);
 			this.btnDelete.Name = "btnDelete";
-			this.btnDelete.Size = new System.Drawing.Size(100, 31);
+			this.btnDelete.Size = new System.Drawing.Size(129, 31);
 			this.btnDelete.TabIndex = 4;
 			this.btnDelete.Text = "&Delete";
 			this.btnDelete.UseVisualStyleBackColor = false;
@@ -209,9 +209,9 @@ namespace WBNT
 			this.btnReset.BackColor = System.Drawing.Color.Purple;
 			this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnReset.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.btnReset.Location = new System.Drawing.Point(320, 518);
+			this.btnReset.Location = new System.Drawing.Point(557, 518);
 			this.btnReset.Name = "btnReset";
-			this.btnReset.Size = new System.Drawing.Size(104, 31);
+			this.btnReset.Size = new System.Drawing.Size(151, 31);
 			this.btnReset.TabIndex = 5;
 			this.btnReset.Text = "Reset/New";
 			this.btnReset.UseVisualStyleBackColor = false;
@@ -222,7 +222,7 @@ namespace WBNT
 			this.btnSearch.BackColor = System.Drawing.Color.DodgerBlue;
 			this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
-			this.btnSearch.Location = new System.Drawing.Point(807, 32);
+			this.btnSearch.Location = new System.Drawing.Point(1038, 32);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(88, 25);
 			this.btnSearch.TabIndex = 7;
@@ -233,9 +233,9 @@ namespace WBNT
 			// txtSearch
 			// 
 			this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtSearch.Location = new System.Drawing.Point(488, 32);
+			this.txtSearch.Location = new System.Drawing.Point(764, 32);
 			this.txtSearch.Name = "txtSearch";
-			this.txtSearch.Size = new System.Drawing.Size(305, 22);
+			this.txtSearch.Size = new System.Drawing.Size(260, 22);
 			this.txtSearch.TabIndex = 6;
 			this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSearchKeyDown);
 			// 
@@ -244,7 +244,7 @@ namespace WBNT
 			this.btnRefresh.BackColor = System.Drawing.Color.DarkMagenta;
 			this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnRefresh.ForeColor = System.Drawing.SystemColors.Control;
-			this.btnRefresh.Location = new System.Drawing.Point(905, 33);
+			this.btnRefresh.Location = new System.Drawing.Point(1136, 33);
 			this.btnRefresh.Name = "btnRefresh";
 			this.btnRefresh.Size = new System.Drawing.Size(88, 25);
 			this.btnRefresh.TabIndex = 8;
@@ -259,16 +259,16 @@ namespace WBNT
 			this.statusBarDBName,
 			this.statusBarCopyright,
 			this.statusBar1});
-			this.statusStrip1.Location = new System.Drawing.Point(0, 620);
+			this.statusStrip1.Location = new System.Drawing.Point(0, 657);
 			this.statusStrip1.Name = "statusStrip1";
-			this.statusStrip1.Size = new System.Drawing.Size(1008, 24);
+			this.statusStrip1.Size = new System.Drawing.Size(1264, 24);
 			this.statusStrip1.TabIndex = 9;
 			this.statusStrip1.Text = "statusStrip1";
 			// 
 			// statusBarSpace
 			// 
 			this.statusBarSpace.Name = "statusBarSpace";
-			this.statusBarSpace.Size = new System.Drawing.Size(759, 19);
+			this.statusBarSpace.Size = new System.Drawing.Size(1015, 19);
 			this.statusBarSpace.Spring = true;
 			// 
 			// statusBarDBName
@@ -298,9 +298,9 @@ namespace WBNT
 			this.btnSaveClose.BackColor = System.Drawing.Color.SlateBlue;
 			this.btnSaveClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSaveClose.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnSaveClose.Location = new System.Drawing.Point(158, 518);
+			this.btnSaveClose.Location = new System.Drawing.Point(285, 518);
 			this.btnSaveClose.Name = "btnSaveClose";
-			this.btnSaveClose.Size = new System.Drawing.Size(142, 31);
+			this.btnSaveClose.Size = new System.Drawing.Size(168, 31);
 			this.btnSaveClose.TabIndex = 10;
 			this.btnSaveClose.Text = "S&ave && Close";
 			this.btnSaveClose.UseVisualStyleBackColor = false;
@@ -311,7 +311,7 @@ namespace WBNT
 			this.lblStatusNote.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.lblStatusNote.Location = new System.Drawing.Point(26, 574);
 			this.lblStatusNote.Name = "lblStatusNote";
-			this.lblStatusNote.Size = new System.Drawing.Size(282, 31);
+			this.lblStatusNote.Size = new System.Drawing.Size(396, 31);
 			this.lblStatusNote.TabIndex = 11;
 			// 
 			// frmNotes
@@ -319,7 +319,7 @@ namespace WBNT
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.ClientSize = new System.Drawing.Size(1008, 644);
+			this.ClientSize = new System.Drawing.Size(1264, 681);
 			this.Controls.Add(this.lblStatusNote);
 			this.Controls.Add(this.btnSaveClose);
 			this.Controls.Add(this.statusStrip1);
@@ -337,10 +337,10 @@ namespace WBNT
 			this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Icon = global::WBNT.ResourceAssets.Narrator;
-			this.MaximizeBox = false;
 			this.Name = "frmNotes";
 			this.Text = "My Note (minimal)";
 			this.Load += new System.EventHandler(this.FrmNotesLoad);
+			this.ResizeEnd += new System.EventHandler(this.FrmNotesLoad);
 			((System.ComponentModel.ISupportInitialize)(this.dgvNotes)).EndInit();
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
