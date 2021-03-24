@@ -294,7 +294,7 @@ namespace WBNT
 		}
 		void DgvNotesCellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			dgvNotes.Rows[e.RowIndex].Selected = true;
+			if (e.RowIndex >0 ) dgvNotes.Rows[e.RowIndex].Selected = true;
 		}
 		
 		public void displayStatus(int type=0)
@@ -323,6 +323,17 @@ namespace WBNT
 					lblStatusNote .Text = "Uknown status :" + type.ToString();
 					break;
 			}
+		}
+		
+		
+		void DgvNotesCellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+	
+		}
+		
+		void DgvNotesColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			//MessageBox.Show("header click");
 		}
 		
 		

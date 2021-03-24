@@ -59,6 +59,9 @@ namespace WBNT
 		private void InitializeComponent()
 		{
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dgvNotes = new System.Windows.Forms.DataGridView();
 			this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,14 +90,17 @@ namespace WBNT
 			// 
 			// dgvNotes
 			// 
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvNotes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+			this.dgvNotes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.WindowFrame;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvNotes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.dgvNotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvNotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 			this.num,
@@ -102,14 +108,34 @@ namespace WBNT
 			this.note,
 			this.id});
 			this.dgvNotes.Cursor = System.Windows.Forms.Cursors.Hand;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.WindowFrame;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvNotes.DefaultCellStyle = dataGridViewCellStyle3;
 			this.dgvNotes.Location = new System.Drawing.Point(764, 65);
 			this.dgvNotes.MultiSelect = false;
 			this.dgvNotes.Name = "dgvNotes";
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.WindowFrame;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvNotes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.dgvNotes.RowHeadersVisible = false;
+			this.dgvNotes.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.dgvNotes.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			this.dgvNotes.Size = new System.Drawing.Size(460, 540);
 			this.dgvNotes.TabIndex = 0;
 			this.dgvNotes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvNotesCellClick);
+			this.dgvNotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvNotesCellContentClick);
 			this.dgvNotes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvNotesCellDoubleClick);
+			this.dgvNotes.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvNotesColumnHeaderMouseClick);
 			// 
 			// num
 			// 
@@ -142,7 +168,9 @@ namespace WBNT
 			// 
 			// txtTitle
 			// 
+			this.txtTitle.BackColor = System.Drawing.SystemColors.WindowFrame;
 			this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtTitle.ForeColor = System.Drawing.SystemColors.Window;
 			this.txtTitle.Location = new System.Drawing.Point(25, 65);
 			this.txtTitle.Name = "txtTitle";
 			this.txtTitle.Size = new System.Drawing.Size(704, 22);
@@ -150,7 +178,9 @@ namespace WBNT
 			// 
 			// txtNote
 			// 
+			this.txtNote.BackColor = System.Drawing.SystemColors.WindowFrame;
 			this.txtNote.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtNote.ForeColor = System.Drawing.SystemColors.Window;
 			this.txtNote.Location = new System.Drawing.Point(25, 116);
 			this.txtNote.Multiline = true;
 			this.txtNote.Name = "txtNote";
@@ -232,6 +262,7 @@ namespace WBNT
 			// 
 			// txtSearch
 			// 
+			this.txtSearch.BackColor = System.Drawing.SystemColors.WindowFrame;
 			this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSearch.Location = new System.Drawing.Point(764, 32);
 			this.txtSearch.Name = "txtSearch";
@@ -318,7 +349,7 @@ namespace WBNT
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(1264, 681);
 			this.Controls.Add(this.lblStatusNote);
 			this.Controls.Add(this.btnSaveClose);
@@ -334,7 +365,7 @@ namespace WBNT
 			this.Controls.Add(this.txtNote);
 			this.Controls.Add(this.txtTitle);
 			this.Controls.Add(this.dgvNotes);
-			this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Icon = global::WBNT.ResourceAssets.Narrator;
 			this.Name = "frmNotes";

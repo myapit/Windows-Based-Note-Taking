@@ -190,9 +190,11 @@ namespace WBNT
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.ClientSize = new System.Drawing.Size(830, 324);
 			this.Controls.Add(this.statusBar);
 			this.Controls.Add(this.menuBar);
+			this.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.Icon = global::WBNT.ResourceAssets.Narrator;
 			this.IsMdiContainer = true;
 			this.MainMenuStrip = this.menuBar;
